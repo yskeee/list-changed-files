@@ -5,3 +5,7 @@ export const CommonHoge = (): string => {
 function test() {
   console.log("test!");
 }
+
+function common() {
+  console.log("common");
+}
