@@ -32,7 +32,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Output changed files
-        run: echo `${{ steps.get-changed-files.outputs.all }}`
+        run: echo ${{ steps.get-changed-files.outputs.all }}
 
       - name: Output changed files 2
         run: echo `cat ${HOME}/files.json`
