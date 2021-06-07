@@ -7,5 +7,5 @@ function test() {
 }
 
 function common() {
-  console.log("common");
+  console.log("common 2");
 }
