@@ -31,9 +31,9 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       # Get all changed files
-      - uses: jitterbit/get-changed-files@v1
-        with:
-          format: ''
+      # - uses: jitterbit/get-changed-files@v1
+      #  with:
+      #    format: ''
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
