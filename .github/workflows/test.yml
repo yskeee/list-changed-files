@@ -25,15 +25,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Get changed files
+      - name: Get changed files
       - uses : lots0logs/gh-action-get-changed-files@2.1.4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # Get all changed files
-      # - uses: jitterbit/get-changed-files@v1
-      #  with:
-      #    format: ''
+      - name: Output changed files
+        run: echo `cat ${HOME}/files.json`
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
