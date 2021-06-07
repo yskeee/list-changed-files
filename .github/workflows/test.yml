@@ -46,6 +46,10 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
+      - name: echo if contains packages/common
+        if: contains(${{ steps.get-changed-files.outputs.all }}, 'packages/common')
+        run: echo 'packages/common/* has changed'
+
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
