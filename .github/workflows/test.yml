@@ -26,7 +26,7 @@ jobs:
 
       - name: Get changed files
         id : get-changed-files
-        uses : lots0logs/gh-action-get-changed-files@2.1.4
+        uses : yskeee/gh-action-get-changed-files@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
