@@ -46,15 +46,15 @@ jobs:
         run: echo ${{ steps.get-changed-files.outputs.removed }}
 
       - name: echo if contains packages/common
-        if: ${{ contains(steps.get-changed-files.outputs.all, 'packages/common') || contains(steps.get-changed-files.outputs.removed, 'packages/common') }}
+        if: contains(steps.get-changed-files.outputs.all, 'packages/common')
         run: echo 'packages/common/* has changed'
 
       - name: echo if contains packages/frontend
-        if: ${{ contains(steps.get-changed-files.outputs.all, 'packages/frontend') || contains(steps.get-changed-files.outputs.removed, 'packages/frontend') }}
+        if: contains(steps.get-changed-files.outputs.all, 'packages/frontend')
         run: echo 'packages/frontend/* has changed'
 
       - name: echo if contains packages/backend
-        if: ${{ contains(steps.get-changed-files.outputs.all, 'packages/backend') || contains(steps.get-changed-files.outputs.removed, 'packages/backend') }}
+        if: contains(steps.get-changed-files.outputs.all, 'packages/backend')
         run: echo 'packages/backend/* has changed'
 
       - name: Dump GitHub context
