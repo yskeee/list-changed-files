@@ -30,11 +30,20 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Output changed files
+      - name: Output all changed files
         run: echo ${{ steps.get-changed-files.outputs.all }}
 
-      - name: Output changed files 2
-        run: echo `cat ${HOME}/files.json`
+      - name: Output added files
+        run: echo ${{ steps.get-changed-files.outputs.added }}
+
+      - name: Output modified files
+        run: echo ${{ steps.get-changed-files.outputs.modified }}
+
+      - name: Output renamed files
+        run: echo ${{ steps.get-changed-files.outputs.renamed }}
+
+      - name: Output removed files
+        run: echo ${{ steps.get-changed-files.outputs.removed }}
 
       - name: echo if contains packages/common
         if: ${{ contains(steps.get-changed-files.outputs.all, 'packages/common') || contains(steps.get-changed-files.outputs.removed, 'packages/common') }}
