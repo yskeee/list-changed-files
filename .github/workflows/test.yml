@@ -49,13 +49,25 @@ jobs:
         if: contains(steps.get-changed-files.outputs.all, 'packages/common')
         run: echo 'packages/common/* has changed'
 
+      - name: Notify success common checks
+        if: success()
+        run: echo 'SUCCESS - echo if contains packages/common'
+
       - name: echo if contains packages/frontend
         if: contains(steps.get-changed-files.outputs.all, 'packages/frontend')
         run: echo 'packages/frontend/* has changed'
 
+      - name: Notify cancelled frontend checks
+        if: cancelled()
+        run: echo 'CANCELLED - echo if contains packages/frontend'
+
       - name: echo if contains packages/backend
         if: contains(steps.get-changed-files.outputs.all, 'packages/backend')
         run: echo 'packages/backend/* has changed'
+
+      - name: Notify Failed backend checks
+        if: failure()
+        run: echo 'FAILED - echo if contains packages/backend'
 
       - name: Dump GitHub context
         env:
