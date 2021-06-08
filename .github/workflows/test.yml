@@ -40,10 +40,6 @@ jobs:
         if: contains(steps.get-changed-files.outputs.all, 'packages/common')
         run: echo 'packages/common/* has changed'
 
-      - name: echo if contains ^packages/common
-        if: contains(steps.get-changed-files.outputs.all, '^packages/common/')
-        run: echo 'packages/common/* has changed'
-
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
