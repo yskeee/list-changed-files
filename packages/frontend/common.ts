@@ -9,7 +9,3 @@ function test2(): string {
 function test3(): string {
   return "futa";
 }
-
-function test4(): string {
-  return "test4";
-}
