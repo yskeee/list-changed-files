@@ -6,6 +6,3 @@ function test2(): string {
   return "hoge";
 }
 
-function test3(): string {
-  return "futa";
-}
