@@ -5,3 +5,7 @@ export const Test = (): string => {
 function back() {
   console.log("back");
 }
+
+function back2(): string {
+  return "back2";
+}
